@@ -1,0 +1,211 @@
+/* start global rules  */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: "Roboto", sans-serif; 
+}
+.container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+:root{
+    --maincolor:#2196F3;
+}
+/* end global rules  */
+/* start media queries */
+@media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* end media queries */
+/* start header  */
+header {
+    background-color: whitesmoke;
+}
+header .container{
+    display: flex;
+    justify-content: space-between;
+}
+header .container ul{
+    flex-basis: 65%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header .container ul li a,
+header .container h4 a{
+    display: block;
+    text-decoration: none;
+    color: var(--maincolor);
+    padding: 25px 0;
+    font-weight: 600;
+}
+@media (max-width:767px){
+    header .container ul{
+        display: none;
+    }
+}
+/* end header */
+/* start first  */
+.first {
+    background-image: url("/images/bcg1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 300px;
+    position: relative;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-duration: 100s;
+}
+@keyframes move {
+    0%{
+        background-image: url("/images/bcg1.jpg");
+    }33%{
+        background-image: url("/images/bcg2.jpg");
+    }69%{
+        background-image: url("/images/bcg3.jpg");
+    }
+}
+.first::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.352);
+    z-index: 1;
+}
+.first .container{
+    padding: 60px; 
+}
+.first .container h1{
+    line-height: 1.6;
+    font-size: 38px;
+    margin: 0;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+    color: var(--maincolor);
+    text-shadow: 1px 1px 2px black;
+    position: relative;
+    z-index: 2;
+}
+form{
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px #a3a0a0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+form label{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+}
+@media  (min-width:768px) {
+    form div:not(:last-of-type){
+    flex: 1 1 30%;
+    margin: 0 20px;
+}
+}
+form div input{
+    background-color: #eee;
+    border: none;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px 20px;
+    width: 100%;
+}
+form div input:focus{
+    outline: none;
+    border: 1px solid var(--maincolor);
+}
+form .thirdInfo input{
+    background-color:#c4c71e;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 550;
+    border-radius: 6px;
+}
+@media (max-width:767px){
+    form{
+        width: 100%;
+        flex-direction: column;
+        margin: 30px 0;
+    }
+    form div{
+        width: 100%;
+    }
+    form div label{
+        margin: 10px 0;
+    }
+    form div input {
+        width: 100%;
+        padding: 10px ;
+    }
+    form .thirdInfo input{
+        margin-top: 15px;
+        padding: 15px;
+    }
+}
+@media (min-width:768px){
+    form{
+        margin-top: -40px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+}
+/* end first  */
+/* start second */
+.secend {
+    padding: 100px 0;
+    background-color: whitesmoke;
+}
+.secend .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.secend .container .box{
+    padding: 25px 8px;
+    border: 1px solid rgba(141, 141, 0, 0.737);
+    border-radius: 10px;
+    text-align: center;
+}
+.secend .container .box i{
+    color: var(--maincolor);
+    font-size: 50px;
+}
+.secend .container .box h3{
+    margin: 15px;
+}
+/* end second */
+
