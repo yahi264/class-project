@@ -99,7 +99,7 @@ header .container h4 a{
 /* end header */
 /* start first  */
 .first {
-    background-image: url("/images/bcg1.jpg");
+    background-image: url("../images/bcg1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -112,11 +112,11 @@ header .container h4 a{
 }
 @keyframes move {
     0%{
-        background-image: url("/images/bcg1.jpg");
+        background-image: url("../images/bcg1.jpg");
     }33%{
-        background-image: url("/images/bcg2.jpg");
+        background-image: url("../images/bcg2.jpg");
     }69%{
-        background-image: url("/images/bcg3.jpg");
+        background-image: url("../images/bcg3.jpg");
     }
 }
 .first::after{
