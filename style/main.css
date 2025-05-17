@@ -242,11 +242,6 @@ form .thirdInfo input{
     border-radius: 10px;
     text-align: center;
     transition: .6s;
-
-}
-.secend .container .box:hover i{
-    color: white;
-    transform: scale(1.3);
 }
 .secend .container .box:hover{
     background-color: var(--maincolor);
@@ -256,6 +251,11 @@ form .thirdInfo input{
 .secend .container .box i{
     color: var(--maincolor);
     font-size: 50px;
+    transition: 1s;
+}
+.secend .container .box:hover i{
+    color: white;
+    transform: scale(1.3);
 }
 .secend .container .box h3{
     margin: 15px;
@@ -287,31 +287,18 @@ form .thirdInfo input{
 .acceuil .container .sou-cont{
   position: absolute;
   top: 25%;  
+  left: 0;
   background-color: rgba(0, 0, 0, 0.446); 
-  animation-name: backChange;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
   border-radius: 15px;
-  animation-duration: 30s;
-  animation-delay: 15s;
-  z-index: 3;
-}
-@keyframes backChange{
-    0%{
-        background-color: rgba(0, 0, 0, 0.446);
-    }50%{ 
-        background-color: rgba(255, 254, 254, 0.242);
-    }100%{
-        background-color: rgba(51, 63, 160, 0.446);     
-    }
 }
 .acceuil .container .sou-cont h2{
-    margin: 15px;
+    width: fit-content;
+    margin: 0 auto;
     color: white;
 }
 .acceuil .container .sou-cont p{
     color: white;
-    margin: 30px 15px;
+    margin: 30px 10px;
     font-size: 18px;
     line-height: 1.6;
     text-indent: 30px;
@@ -327,13 +314,35 @@ form .thirdInfo input{
     font-size: 20px;
     margin: 10px auto;
 }
+@media (max-width:767px){
+    .acceuil .container .sou-cont h2{
+    width: fit-content;
+    font-size: 22px;
+    text-align: center;
+}
+.acceuil .container .sou-cont p{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px ;
+    line-height: 1.5;
+    text-indent: 30px;
+}
+.acceuil .container .sou-cont a{
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin: 10px auto;
+}
+
+}
 /* end acceuil */
 /* start testimonials */
 .testimonials{
     padding-top: 50px;
     padding-bottom: 100px;
+    background-color: #eee;
 }
-.testimonials .container h2{
+.testimonials .container > h2{
     text-align: center;
     margin-bottom: 60px;
 }
@@ -379,4 +388,107 @@ text-indent: 20px;
     border: 10px solid #eee;
 }
 /* end testimonials */
+/* start members  */
+.members{
+   padding-top: 30px;
+}
+.members h2{
+    width: fit-content;
+    margin: 0 auto 30px;
+    position: relative;
+    padding-bottom: 15px;
+    
+}
+.members h2::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    border-radius: 6.5px;
+    background-color: black;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.members h2::after{
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 6.5px;
+    background-color: black;
+    bottom:-6.5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.members .container{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap:10px;
+    row-gap: 5px;
+    justify-content: center;  
+}
+.members .container .member{
+    flex-basis: 270px;
+    text-align: center;
+}
+.members .container .member img{
+    max-width: 100%;
+    height: 70%;
+    border-radius: 50%;
+}
+.members .container .member h3{
+    margin: 10px 0 0;
+}
+.members .container .member p{
+    color: var(--maincolor);
+
+}
+/* end members */
+/* start footer */
+footer{
+    padding-top: 60px;
+    background-color:black ;
+    color:white;
+}
+footer .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+footer .container .box{
+
+}
+footer .container .box h3{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+footer .container .box .links{
+    margin: 15px 0;
+}
+footer .container .box .links i{
+    padding: 10px;
+    background-color: #666;
+}
+footer .container .box p{
+    color: #b9b9b9;
+    line-height: 2;
+    text-indent: 30px;
+    text-align: justify;
+}
+footer .container .box h2{
+    text-align: center;
+    margin-bottom: 15px;
+}
+footer .container .box iframe{
+    max-width: 100%;
+    height: 80%;
+}
+footer .copyright{
+    padding: 10px 0;
+    background-color: gray; 
+    font-weight: bold;
+    text-align: center;
+}
+/* end footer  */
 
