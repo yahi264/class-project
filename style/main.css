@@ -17,7 +17,7 @@ body{
     margin-left: auto;
 }
 :root{
-    --maincolor:#2196F3;
+    --maincolor: #03b4bc;
 }
 .spike{
     position: relative;
@@ -30,6 +30,39 @@ body{
     background-image: linear-gradient(135deg, white 25%, transparent 25%),
     linear-gradient(225deg, white 25%, transparent 25%);
     background-size: 30px 30px;
+}
+.title{
+    width: fit-content;
+    margin: 0 auto 30px;
+    position: relative;
+    padding-bottom: 15px;
+    
+}
+ .title::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 1.5px;
+    border-radius: 6.5px;
+    background-color: var(--maincolor);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.title::after{
+    content: "";
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 6.5px;
+    background-color: var(--maincolor);
+    bottom:-6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.logo{
+    margin-top: 20px;
+    border-radius: 10px;
 }
 /* end global rules  */
 /* start media queries */
@@ -262,13 +295,51 @@ form .thirdInfo input{
 }
 /* end second */
 /* start acceuil  */
+.acceuile{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    height: 40vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--maincolor);
+}
+.acceuile video{
+    max-width: 100%;
+    height:auto;
+}
+@media (max-width:767px){
+    .acceuile{
+        display: none;
+    }
+}
+@media (min-width:992px){
+    .acceuile{
+        height: 50vh;   
+    }
+}
 .acceuil{
     background-image: url(../images/bcg1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 75vh;
+    height: 80vh;
     position: relative;
+}
+.acceuil i{
+    position: absolute;
+    color: var(--maincolor);
+    font-size: 80px;
+    top:50%;
+    transform: translateY(-50%);
+    z-index: 11;
+    cursor: pointer;
+}
+.acceuil i:first-of-type{
+    right: 5px;
+}
+.acceuil i:last-of-type{
+    left: 5px;
+
 }
 .acceuil::before{
     content: "";
@@ -281,24 +352,24 @@ form .thirdInfo input{
     position: relative;
     height: 100%;
 }
-.acceuil .container h2{
-    padding-top: 20px;
-}
 .acceuil .container .sou-cont{
   position: absolute;
+  padding: 10px;
   top: 25%;  
+  margin: 0 50px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.446); 
   border-radius: 15px;
 }
 .acceuil .container .sou-cont h2{
     width: fit-content;
-    margin: 0 auto;
+    margin: 15px auto 0;
     color: white;
 }
 .acceuil .container .sou-cont p{
     color: white;
     margin: 30px 10px;
+    text-align: justify;
     font-size: 18px;
     line-height: 1.6;
     text-indent: 30px;
@@ -316,12 +387,20 @@ form .thirdInfo input{
 }
 @media (max-width:767px){
     .acceuil .container .sou-cont h2{
-    width: fit-content;
-    font-size: 22px;
+    max-width: 100%;;
+    font-size: 20px;
     text-align: center;
+}
+.acceuil .container .sou-cont{
+    margin: 0 10px;
+}
+.acceuil i{
+    display: none;
+
 }
 .acceuil .container .sou-cont p{
     color: white;
+    font-size: 15px;
     margin-top: 20px;
     margin-bottom: 20px ;
     line-height: 1.5;
@@ -336,6 +415,66 @@ form .thirdInfo input{
 
 }
 /* end acceuil */
+/* start who-we-are */
+.who-we-are{
+   padding: 40px 0;
+}
+.who-we-are .title::before{
+    width: 350px;
+}
+@media(max-width:767px){
+    .who-we-are h2{
+        font-size: 18px;
+        max-width: 100%;
+    }
+    .who-we-are .title::before{
+        width: 250px;
+    }
+}
+.who-we-are .container{
+    display: grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)) ;
+    row-gap: 55px;
+    column-gap: 30px;
+}
+.who-we-are .container .box{
+    padding: 30px;
+    background-color: whitesmoke;
+    border-right: 2px solid var(--maincolor);
+    border-left: 2px solid var(--maincolor);
+    border-radius: 10px; 
+    transition-duration: .3s; 
+}
+.who-we-are .container .box:hover{
+    transform: translateY(-20px);
+    border-right: 4px solid var(--maincolor);
+    border-left: 4px solid var(--maincolor);
+    border-radius: 20px; 
+}
+.who-we-are .container .box i{
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    color: var(--maincolor);
+    font-size: 45px;
+    font-weight:900 ;
+    transition-duration: .3s;
+}
+.who-we-are .container .box:hover i{
+    font-size: 55px;
+}
+.who-we-are .container .box h3{
+    width: fit-content;
+    margin: 10px auto;
+    color: var(--maincolor);
+}
+.who-we-are .container .box p{
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.6;
+}
+
+/* end who-we-are */
 /* start testimonials */
 .testimonials{
     padding-top: 50px;
@@ -392,34 +531,15 @@ text-indent: 20px;
 .members{
    padding-top: 30px;
 }
-.members h2{
+.members .pdg{
     width: fit-content;
-    margin: 0 auto 30px;
-    position: relative;
-    padding-bottom: 15px;
-    
+    margin: 0 auto;
+    text-align: center;
 }
-.members h2::before{
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 1px;
-    border-radius: 6.5px;
-    background-color: black;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.members h2::after{
-    content: "";
-    position: absolute;
-    width: 13px;
-    height: 13px;
-    border-radius: 6.5px;
-    background-color: black;
-    bottom:-6.5px;
-    left: 50%;
-    transform: translateX(-50%);
+.members .pdg img{
+    width:250px;
+    height: 70%;
+    border-radius: 50%;
 }
 .members .container{
     display: flex;
@@ -442,7 +562,6 @@ text-indent: 20px;
 }
 .members .container .member p{
     color: var(--maincolor);
-
 }
 /* end members */
 /* start footer */
@@ -457,7 +576,7 @@ footer .container{
     gap: 20px;
 }
 footer .container .box{
-
+    overflow: hidden;
 }
 footer .container .box h3{
     font-size: 32px;
@@ -481,12 +600,13 @@ footer .container .box h2{
     margin-bottom: 15px;
 }
 footer .container .box iframe{
+    border-radius: 4px;
     max-width: 100%;
     height: 80%;
 }
 footer .copyright{
     padding: 10px 0;
-    background-color: gray; 
+    background-color: var(--maincolor); 
     font-weight: bold;
     text-align: center;
 }
