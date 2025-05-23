@@ -531,21 +531,40 @@ text-indent: 20px;
 .members{
    padding-top: 30px;
 }
+.members h2{
+    margin-bottom: 60px;
+}
 .members .container{
     display: flex;
     flex-wrap: wrap;
-    column-gap:10px;
-    row-gap: 5px;
+    column-gap:40px;
+    row-gap: 40px;
     justify-content: center;  
 }
 .members .container .member{
-    flex-basis: 270px;
+    flex-basis: 210px;
     text-align: center;
 }
-.members .container .member img{
+.members .container .member .image{
+     overflow: hidden;
+     border-radius: 40%;
+     border: 2px solid #ddd;
+}
+ .members .container .member .image:hover::after{
+    width: 100%;
+    height: 100%;
+
+ }
+.members .container .member .image img{
+    display: block;
     max-width: 100%;
-    height: 70%;
-    border-radius: 50%;
+    height: 240px;
+    object-fit:fill;
+    border-radius: 40%;
+    transition-duration: .3s;
+ }
+.members .container .member .image img:hover{
+    transform: scale(1.3) rotate(4deg);
 }
 .members .container .member h3{
     margin: 10px 0 0;
