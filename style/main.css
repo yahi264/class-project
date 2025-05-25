@@ -64,6 +64,69 @@ body{
     margin-top: 20px;
     border-radius: 10px;
 }
+.btn{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 40px;
+    color:var(--maincolor);
+    border: 2px solid black;
+    border-radius: 50%;
+    display: none;
+}
+.botim{
+    position: relative;
+}
+.botim {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 90px;
+ }
+ .bot{
+    width: 100%;
+ }
+
+    .botim::after {
+      content: "I'm here if you need a help...";
+      position: absolute;
+      bottom: 100%; /* appears above the bot */
+      right: 50%;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      white-space: nowrap;
+      opacity: 0;
+      animation: appearDisappear 12s ease-in-out infinite;
+      pointer-events: none; /* Prevent hover/click issues */
+    }
+
+  @keyframes appearDisappear {
+  0% {
+    opacity: 0;
+    transform:   translateY(10px);
+  }
+  5% {
+    opacity: 1;
+    transform:   translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform:  translateY(0);
+  }
+  60% {
+    opacity: 0;
+    transform:  translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform:  translateY(10px);
+  }
+}
+
 /* end global rules  */
 /* start media queries */
 @media (min-width:768px){
@@ -186,7 +249,7 @@ header .container h4 a{
 }
 }
 form{
-    width: 80%;
+    width: 95%;
     margin: 0 auto;
     background-color: white;
     padding: 25px;
@@ -195,16 +258,17 @@ form{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    column-gap: 10px;
 }
 form label{
     display: block;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: bold;
+    padding-left: 10px;
 }
 @media  (min-width:768px) {
     form div:not(:last-of-type){
-    flex: 1 1 30%;
-    margin: 0 20px;
+    flex: 1 1 25%;
 }
 }
 form div input{
@@ -228,7 +292,7 @@ form .thirdInfo input{
     font-weight: 550;
     border-radius: 6px;
 }
-@media (max-width:767px){
+@media (max-width:991px){
     form{
         width: 100%;
         flex-direction: column;
@@ -249,7 +313,7 @@ form .thirdInfo input{
         padding: 15px;
     }
 }
-@media (min-width:768px){
+@media (min-width:991px){
     form{
         margin-top: -40px;
         position: absolute;
@@ -324,6 +388,19 @@ form .thirdInfo input{
     background-size: cover;
     height: 80vh;
     position: relative;
+    animation-name: movetwo;
+    animation-iteration-count: infinite;
+    animation-duration: 30s;
+    animation-delay: 15s;
+}
+@keyframes movetwo {
+    0%{
+        background-image: url("../images/bcg1.jpg");
+    }33%{
+        background-image: url("../images/bcg2.jpg");
+    }69%{
+        background-image: url("../images/bcg3.jpg");
+    }
 }
 .acceuil i{
     position: absolute;
@@ -426,6 +503,7 @@ form .thirdInfo input{
     .who-we-are h2{
         font-size: 18px;
         max-width: 100%;
+        text-align: center;
     }
     .who-we-are .title::before{
         width: 250px;
@@ -583,6 +661,7 @@ footer .container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 20px;
+    align-items: center;
 }
 footer .container .box{
     overflow: hidden;
@@ -614,6 +693,7 @@ footer .container .box iframe{
     height: 80%;
 }
 footer .copyright{
+    margin-top: 2px;
     padding: 10px 0;
     background-color: var(--maincolor); 
     font-weight: bold;
