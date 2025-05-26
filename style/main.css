@@ -84,24 +84,25 @@ body{
     right: 10px;
     width: 90px;
  }
- .bot{
-    width: 100%;
- }
+.bot{
+    width: 100%;  
+}
 
-    .botim::after {
-      content: "I'm here if you need a help...";
-      position: absolute;
-      bottom: 100%; /* appears above the bot */
-      right: 50%;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      padding: 6px 12px;
-      border-radius: 8px;
-      font-size: 13px;
-      white-space: nowrap;
-      opacity: 0;
-      animation: appearDisappear 12s ease-in-out infinite;
-      pointer-events: none; /* Prevent hover/click issues */
+
+.botim::after {
+    content: "I'm here if you need a help...";
+    position: absolute;
+    bottom: 100%; /* appears above the bot */
+    right: 50%;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    white-space: nowrap;
+    opacity: 0;
+    animation: appearDisappear 12s ease-in-out infinite;
+    pointer-events: none; /* Prevent hover/click issues */
     }
 
   @keyframes appearDisappear {
@@ -388,19 +389,6 @@ form .thirdInfo input{
     background-size: cover;
     height: 80vh;
     position: relative;
-    animation-name: movetwo;
-    animation-iteration-count: infinite;
-    animation-duration: 30s;
-    animation-delay: 15s;
-}
-@keyframes movetwo {
-    0%{
-        background-image: url("../images/bcg1.jpg");
-    }33%{
-        background-image: url("../images/bcg2.jpg");
-    }69%{
-        background-image: url("../images/bcg3.jpg");
-    }
 }
 .acceuil i{
     position: absolute;
